@@ -1,0 +1,26 @@
+# Bytecode / caché de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Entornos virtuales
+venv/
+.venv/
+env/
+ENV/
+
+# Editor / IDE
+.vscode/
+.idea/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Distribución / build
+build/
+dist/
+*.egg-info/
+
+# Datasets cacheados localmente (si llegaran a descargarse dentro del proyecto)
+scikit_learn_data/
