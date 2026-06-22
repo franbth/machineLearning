@@ -60,7 +60,9 @@ def load_energy_efficiency():
     return energy_efficiency.data, energy_efficiency.target, energy_efficiency.feature_names, "Energy Efficiency"
 
 def load_bike_sharing():
-    bike_sharing = datasets.fetch_openml(name="bike-sharing", version=1, as_frame=True)
+    bike_sharing = datasets.fetch_openml(name="Bike_Sharing_Demand", version=2, as_frame=True)
+    print(bike_sharing.frame.columns.tolist())
+    print(bike_sharing.frame.dtypes)
     return bike_sharing.data, bike_sharing.target, bike_sharing.feature_names, "Bike Sharing"
 
 def load_air_quality():

@@ -3,6 +3,7 @@ import algorithms.linear_regression_simple as linear_regression_simple
 import algorithms.linear_regression_multiple as linear_regression_multiple
 import algorithms.polynomial_regression as polynomial_regression
 import algorithms.svr as svr
+import algorithms.decision_tree_regressor as decision_tree_regressor
 
 #algoritmos = {
 #    "knn": knn.run
@@ -23,5 +24,6 @@ import algorithms.svr as svr
 #linear_regression_simple.run("diabetes")
 #linear_regression_multiple.run("automobile")
 #polynomial_regression.run("synthetic")
-svr.run("diabetes")
+#svr.run("diabetes")
+decision_tree_regressor.run("bike sharing")
 
