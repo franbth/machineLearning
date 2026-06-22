@@ -82,6 +82,10 @@ cd machineLearning
 python main.py
 ```
 
+## Informe
+
+El análisis completo de resultados, con capturas y comparación con lo esperado para cada algoritmo y dataset, está en [`INFORME.md`](./INFORME.md).
+
 ## Notas técnicas
 
 - Algunos datasets de OpenML requieren especificar `target_column` manualmente, ya que el target por defecto del dataset no siempre coincide con la variable que se busca predecir (ej. `automobile`, `energy-efficiency`).
