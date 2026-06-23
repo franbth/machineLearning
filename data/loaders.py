@@ -57,17 +57,23 @@ def load_energy_efficiency():
     energy_efficiency = datasets.fetch_openml(name="energy-efficiency", version=1, as_frame=True, target_column="y1")
     energy_efficiency.data=energy_efficiency.data.drop(columns="y2")
     energy_efficiency.target=pd.to_numeric(energy_efficiency.target)
+    feature_names = energy_efficiency.data.columns.tolist()
     return energy_efficiency.data, energy_efficiency.target, energy_efficiency.feature_names, "Energy Efficiency"
 
 def load_bike_sharing():
     bike_sharing = datasets.fetch_openml(name="Bike_Sharing_Demand", version=2, as_frame=True)
-    print(bike_sharing.frame.columns.tolist())
-    print(bike_sharing.frame.dtypes)
+    bike_sharing.data = pd.get_dummies(bike_sharing.data, columns=['season', 'holiday', 'workingday', 'weather'], drop_first=True)
     return bike_sharing.data, bike_sharing.target, bike_sharing.feature_names, "Bike Sharing"
 
 def load_air_quality():
-    air_quality = datasets.fetch_openml(name="air-quality", version=1, as_frame=True)
-    return air_quality.data, air_quality.target, air_quality.feature_names, "Air Quality"
+    air_quality = datasets.fetch_openml(name="airquality", version=1, as_frame=True, target_column=None)
+    y = air_quality.data["Ozone"]
+    x = air_quality.data.drop(columns="Ozone")
+    datarget = pd.concat ([x, y], axis=1)
+    datarget = datarget.dropna()
+    x = datarget.drop(columns=['Ozone'])
+    y = datarget['Ozone']
+    return x, y, x.columns.tolist(), "Air Quality"
 
 def load_heart_disease():
     heart_disease = datasets.fetch_openml(name="heart-disease", version=1, as_frame=True)
