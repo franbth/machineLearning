@@ -37,7 +37,13 @@ def load_synthetic():
 #openml
 def load_titanic ():
     titanic = datasets.fetch_openml(name="titanic", version=1, as_frame=True)
-    return titanic.data, titanic.target, titanic.feature_names, "Titanic"
+    titanic.data=titanic.data.drop(columns=['boat', 'body', 'name', 'ticket'] )
+    titanic.data = pd.get_dummies(titanic.data, columns=['sex', 'home.dest', 'embarked', 'cabin' ], drop_first=True)
+    datarget = pd.concat ([titanic.data, titanic.target], axis=1)
+    datarget = datarget.dropna()
+    x = datarget.drop(columns=['survived'])
+    y = datarget['survived']
+    return x, y, x.columns.tolist(), "Titanic"
 
 def load_boston_housing():
     boston_housing = datasets.fetch_openml(name="boston", version=1, as_frame=True)
@@ -76,7 +82,10 @@ def load_air_quality():
     return x, y, x.columns.tolist(), "Air Quality"
 
 def load_heart_disease():
-    heart_disease = datasets.fetch_openml(name="heart-disease", version=1, as_frame=True)
+    heart_disease = datasets.fetch_openml(name="Heart-Disease-Dataset-(Comprehensive)", version=2, as_frame=True)
+    print(heart_disease.details)
+    print(heart_disease.data.columns.tolist())
+    print(heart_disease.frame.dtypes)
     return heart_disease.data, heart_disease.target, heart_disease.feature_names, "Heart Disease"
 
 def load_20newsgroups():

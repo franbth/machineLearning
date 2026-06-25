@@ -5,6 +5,8 @@ import algorithms.polynomial_regression as polynomial_regression
 import algorithms.svr as svr
 import algorithms.decision_tree_regressor as decision_tree_regressor
 import algorithms.random_forest_regressor as random_forest_regressor
+import algorithms.logistic_regressor as logistic_regressor
+import algorithms.svm as svm
 
 #algoritmos = {
 #    "knn": knn.run
@@ -27,5 +29,7 @@ import algorithms.random_forest_regressor as random_forest_regressor
 #polynomial_regression.run("synthetic")
 #svr.run("diabetes")
 #decision_tree_regressor.run("diabetes")
-random_forest_regressor.run("air quality")
+#random_forest_regressor.run("air quality")
+#logistic_regressor.run("heart disease")
+svm.run('digits')
 

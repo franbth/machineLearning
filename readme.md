@@ -48,13 +48,13 @@ Cada módulo de `algorithms/` declara su propia lista `DATASETS` y una función 
   Datasets: California Housing, Diabetes, Synthetic (`make_regression`)
 - [x] **SVR (Support Vector Regression)** — `algorithms/svr.py`
   Datasets: California Housing, Diabetes, Energy Efficiency
-- [ ] **Árbol de decisión (regresión)** — `algorithms/decision_tree_regressor.py`
+- [x] **Árbol de decisión (regresión)** — `algorithms/decision_tree_regressor.py`
   Datasets: California Housing, Diabetes, Bike Sharing
-- [ ] **Random Forest (regresión)**
-- [ ] **Regresión logística**
+- [x] **Random Forest (regresión)** — `algorithms/random_forest_regressor.py`
+- [x] **Regresión logística** — `algorithms/logistic_regressor.py`
 - [x] **KNN** — `algorithms/knn.py`
   Datasets: Iris, Wine, Digits
-- [ ] **SVM**
+- [x] **SVM** — `algorithms/svm.py`
 - [ ] **Naive Bayes**
 - [ ] **Árbol de decisión (clasificación)**
 - [ ] **Random Forest (clasificación)**
