@@ -25,6 +25,10 @@ machineLearning/
 │   ├── linear_regression_multiple.py
 │   ├── polynomial_regression.py
 │   ├── svr.py
+│   ├── svm.py
+│   ├── random_forest_regressor.py
+│   ├── polynomial_regressor.py
+│   ├── logistic_regressor.py
 │   └── decision_tree_regressor.py
 │
 ├── data/
